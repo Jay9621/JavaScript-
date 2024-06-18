@@ -29,3 +29,23 @@ const myFunction = function(){
 // datatype of null is object
 // datatype of function is function or function object
 
+//*************Memory*********************
+
+//Stack (primitive type) we get a copy and change in the copy, Heap (non Primitive) change in original value
+
+let myYoutubeName = "JayYT"
+anothername = 'JKYT'
+
+console.log(myYoutubeName);
+console.log(anothername);
+
+let userOne = {
+    email: "jay@gamil.com",
+    upi: "user@ybl"
+}
+
+let usertwo = userOne
+usertwo.email = "User@gmail.com"
+
+console.log(userOne.email);
+console.log(usertwo.email);
