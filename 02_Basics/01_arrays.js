@@ -29,11 +29,15 @@ const myArr2 = new Array(1, 2, 3, 4)
 // //newArr.slice(2) 
 // console.log(newArr);  
 
-console.log("A", myArr); //A [ 0, 1, 2, 3, 4, 5 ]
+// console.log("A", myArr); //A [ 0, 1, 2, 3, 4, 5 ]
 
-const myn1 = myArr.slice(1, 3)
-console.log(myn1); // [ 1, 2 ] the value remain till 2 nd index but it will not change or manipulate the actual array
+// const myn1 = myArr.slice(1, 3)
+// console.log(myn1); // [ 1, 2 ] the value remain till 2 nd index but it will not change or manipulate the actual array
 
-const myn2 = myArr.splice(1, 3) // it also remove the other index till 3rd index but main diff is that it manipualate or change the actual array so main array become [ 0, 4, 5 ]
-console.log(myn2); // [ 1, 2, 3 ]
-console.log("B", myArr); //[ 0, 4, 5 ]
+// const myn2 = myArr.splice(1, 3) // it also remove the other index till 3rd index but main diff is that it manipualate or change the actual array so main array become [ 0, 4, 5 ]
+// console.log(myn2); // [ 1, 2, 3 ]
+// console.log("B", myArr); //[ 0, 4, 5 ]
+
+// console.log(myArr.concat(1)); // add element in last 
+// console.log(myArr);
+
