@@ -22,7 +22,7 @@ function addnumber(num1, num2){
 }
 
 const result = addnumber(3, 4)
-// console.log("Result: ",result);
+console.log("Result: ",result);
 
 // function loginUserMessage(username){
 //     if (username === undefined){

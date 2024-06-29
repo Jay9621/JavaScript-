@@ -13,3 +13,4 @@ const user = {
 // user.welcomeMessage()
 
 console.log(this);
+
