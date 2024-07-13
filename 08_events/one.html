@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function () {
+    //     alert('Owl Click')
+        
+    // } // this method having limited features
+    // attachEvent
+    // jQuery - on
+
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert('Owl Click')
+    // })
+    // interview que => mouse ne kaha click kiya mouse ki position kya thi, view kya tha, click kiya to window ki height width kya thi ===> view , time kya tha ===> timestamp . uper wale code se browser pr ye dikh jata hai.
+
+    // ye event imp hai ==> 
+    // type = keyboard mouse types event, timestamp = time date activites, defaultPrevented = ham default behaviur kisi chij ka change kr sakte hai e.g => sab ham form submit krte hai tab ham kahate hai hi default submit na ho jaye, 
+    //target , toElement, **** srcElement, 
+    // position related => clientX, clientY, screenX, screenY
+    // altKey ,ctrlKey, shiftKey, keyCode = iska hame direct acess mil jata hai press hui hai ya nahi
+
+    //Event Capturing: 
+
+// 1) bubling => bottom to top, use false (it's by default)
+
+
+
+    // document.getElementById('images').addEventListener('click', function(e){ // event listner
+    //     console.log("Clicked inside the ul");
+    // }, false) // false default hota hai
+    // document.getElementById('owl').addEventListener('click', function(e){ // event listner
+    //     console.log("owl clicked");
+    // }, false) // false default hota hai , // O/P =  owl clicked
+                                                    //Clicked inside the ul 
+
+// 2) capturing => top to bottom, use true    
+
+    // document.getElementById('images').addEventListener('click', function(e){ // event listner
+    //     console.log("Clicked inside the ul");
+    // }, true) 
+    // document.getElementById('owl').addEventListener('click', function(e){ // event listner
+    //     console.log("owl clicked");
+    // }, true) 
+
+    // O/P =  Clicked inside the ul 
+            //owl clicked
+
+    // document.getElementById('images').addEventListener('click', function(e){ // event listner
+    //     console.log("Clicked inside the ul");
+    // }, false) 
+    // document.getElementById('owl').addEventListener('click', function(e){ // event listner
+    //     console.log("owl clicked");
+    //     e.stopPropagation(); // to stop the bubling
+    // }, false) 
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     console.log("google clicked");
+    //     e.preventDefault(); // to prevent the execution
+
+    // }, false)
+
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log(e.target.parentNode); // jab ham only e.target lete hai to only img milti hai so ham e.target.parentNode lagyenge to hame puri list milegi like <li></li>
+
+    //     let removeIt = e.target.parentNode;
+    //     removeIt.remove();
+    //     //removeIt.parentNode.removeChild(removeIt); 
+    //     // but is code me agar ham ul pe click karange to pura remove hoga so
+
+    // }, false)
+
+// correct approach 
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName); // jab ham only e.target lete hai to only img milti hai so ham e.target.parentNode lagyenge to hame puri list milegi like <li></li> but tagName lege to target select hoga like ul or IMG
+
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+       
+
+        }
+
+
+
+    }, false)
+
+
+</script>
+</html>
