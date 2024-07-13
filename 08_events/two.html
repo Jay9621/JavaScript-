@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1>Chai aur <Code></Code></h1>
+    <button id="stop">stop</button>
+
+    <script>
+        // setTimeout(function() {
+        //     console.log("Jay");
+        // }, 2000)  // 2 sec ke baad execute hoga ek hi time print karega
+
+        // setInterval(function(){
+        //     console.log("JK");
+        // }, 5000) // 5 sec ke intreval me ye bar bar print hoga
+
+        // const sayJay = function(){
+        //     console.log("Jay");
+        // }
+        // setTimeout(sayJay, 1000)
+
+        // const changeText = function(){
+        //     document.querySelector('h1').innerHTML = "Welcome to JS" // change the h1 
+        // }
+
+        //setTimeout(changeText, 5000)
+
+        // agar ham setTimeout ko band karna chahe means 5 sec ke andar maine stop button press kiya to setTimeout band hoga 
+
+        const changeMe = setTimeout(changeText, 5000)
+
+        document.querySelector('#stop').addEventListener('click', function(){
+            clearTimeout(changeMe); // to stop the timeout
+            console.log("Stop");
+        })
+ 
+    </script>
+</body>
+</html>
