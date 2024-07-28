@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1>Chai aur javascript <Code></Code></h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    
+
+    <script>
+        // setInterval(function(){
+        //     console.log("Jay" , Date.now());
+        // }, 2000)
+
+        // const sayDate = function(){
+        //     console.log("Jay" , Date.now());
+        // } 
+
+        // setInterval(sayDate, 2000)
+
+        // const sayDate = function(str){
+        //     console.log(str , Date.now());
+        // } 
+
+        // const clearID = setInterval(sayDate, 2000, "Hi")
+
+        // clearInterval(clearID);
+
+        /////////////////////////////////////
+
+        let clearID; // Declare clearID in the outer scope
+
+        document.querySelector('#start').addEventListener('click', function() {
+            const sayDate = function(str) {
+                console.log(str, Date.now());
+            };
+
+            clearID = setInterval(sayDate, 2000, "Hi"); // Assign to the outer clearID variable
+        });
+
+        document.querySelector('#stop').addEventListener('click', function() {
+            console.log("Stopped");
+            clearInterval(clearID); // Use clearID to clear the interval
+        });
+        
+    </script>
+</body>
+</html>
