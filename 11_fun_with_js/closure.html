@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="red">Red</button>
+    <button id="green">Green</button>
+</body>
+<script>
+
+    // closer outer function ke scope ka aceess mil jata hai means var , function ka access milt hai at the creation Time
+    
+    function init(){
+        let name = "jay";
+
+        function displayName(){
+            console.log(name);
+            
+        }
+        displayName();
+    }
+    init();
+    //function ke under function hai to hamko access milega is call lexical scoping
+    // chote bado se mang sakte hai but bade choto se nahi maang sakte
+
+    // closure
+
+    function makeFun(){
+        const name = "jk"
+
+        function displayName(){
+            console.log(name);
+            
+        }
+
+        return displayName
+    }
+
+    const myFunc = makeFun();
+    myFunc();
+
+    // ya pe pura ka pura lexical scope return ho raha hai pnly function nahi 
+</script>
+<script>
+    // document.getElementById("red").onclick = function(){
+    //     document.body.style.backgroundColor =  `red`
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor =  `green`
+    // }
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor =  `${color}`
+
+        return function(){
+            document.body.style.backgroundColor =  `${color}`
+        }
+    }
+
+    document.getElementById('red').onclick = clickHandler("red")
+    document.getElementById('green').onclick = clickHandler("green")
+</script>
+</html>
